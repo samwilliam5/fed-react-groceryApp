@@ -1,0 +1,24 @@
+.container button{
+    position: relative;
+   
+    
+}
+.foodlist{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5em;
+    align-items: center;
+padding-left: 25px;     
+}
+.containerlogout{
+    width: auto;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.logouts{
+padding: 10px;    
+}
+
+

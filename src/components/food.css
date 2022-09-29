@@ -1,0 +1,18 @@
+.foods-container {
+    align-items: center;
+    font-weight: 600;
+    font-size: larger;
+    width: 250px;
+    text-align: center;
+    height: 80vh;
+    margin-top: 100px;
+    color: purple;
+    margin-left: 100px;
+    border: solid 2px green;
+    
+    
+
+}
+.foods-container .list{
+    line-height: 2.8em;
+}

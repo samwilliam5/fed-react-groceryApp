@@ -1,53 +1,44 @@
 import './App.css';
-import{ useState} from 'react'; 
-import Body from './components/body';
-import Header from './components/header';
-import Login from './components/login';
-import   {Routes,Route} from 'react-router-dom'
-import NotFound from './NotFound/NotFound';
-import Footer from './components/Footer';
-import About from './components/Pages/About';
-import Help from './components/Pages/Help';
-import SignIn from './components/Pages/SignIn';
-import Cart from './components/Pages/Cart';
-import { Appcontext } from './components/Context';
-import Description from './components/Description';
-
+import Header from './Components/Header';
+import Body from './Components/Body';
+import Productdeals from './Components/Productdeals';
+import { Routes, Route } from 'react-router-dom'
+// import Loginsignin from './Components/Pages/Loginsignin';
+import Cookiefetch from './Components/Cookies/Cookiefetch';
+import Fashionfetch from './Components/Fashion/Fashionfetch';
+import Audiofetch from './Components/Audio/Audiofetch';
+import Description from './Components/Description/Description';
+import Descriptionfashion from './Components/Description/Descriptionfashion';
+import Descriptioncook from './Components/Description/Descriptioncook';
+import Descriptionheadset from './Components/Description/Descriptionheadset';
+import Loginsignin from './Components/Pages/Loginsignin';
+import Logout from './Components/Pages/Logout';
+import { useSelector } from 'react-redux';
+import { selectUser } from './Feauters/Userslice';
 
 function App() {
-  const [isLoggedin,setLoggedIn]=useState(false);
-
-  const loginhandler=()=>{
-
-    setLoggedIn(isLoggedin);
-  }
-
+  const user=useSelector(selectUser)
   return (
     <div className="App">
-      <Appcontext.Provider value={{isLoggedin,setLoggedIn}}>
+      <Header></Header>
+      {/* {user ? <Logout></Logout>:<Loginsignin></Loginsignin>} */}
+      <Productdeals></Productdeals>
       <Routes>
-<Route index element={<Login isLoggedin={loginhandler}></Login>}></Route>
-<Route path='header' element={<Header></Header>}>
-<Route path='body' element={<Body></Body>}>
-</Route>
-<Route  path="logout" element={<Body logout={loginhandler}></Body>}></Route>
-</Route>
-<Route path="*" element={<NotFound />} />
-<Route path='/about' element={<About></About>}></Route>
-<Route path='/help' element={<Help></Help>}></Route>
-<Route path='/signin' element={<SignIn></SignIn>}></Route>
-<Route path='/cart' element={<Cart></Cart>}></Route>
-<Route path='des/:id' element={<Description></Description>}></Route>
-
-
-
+        <Route path='/loginsignin' element={user ? <Logout></Logout>:<Loginsignin></Loginsignin>}></Route>
+        <Route path='/fruitsandveg' element={<Body></Body>}></Route>
+        <Route path='/cookies' element={<Cookiefetch></Cookiefetch>}></Route>
+        <Route path='/beverage' element={<Fashionfetch></Fashionfetch>}></Route>
+        <Route path='/oils' element={<Audiofetch></Audiofetch>}></Route>
+        <Route path='des/:id' element={<Description></Description>}></Route>
+        <Route path='desfas/:id' element={<Descriptionfashion></Descriptionfashion>}></Route>
+        <Route path='descook/:id' element={<Descriptioncook></Descriptioncook>}></Route>
+        <Route path='desaudio/:id' element={<Descriptionheadset></Descriptionheadset>}></Route>
       </Routes>
-      <Footer></Footer>
-      </Appcontext.Provider>
-      {/* {isLoggedin? <Body logout={loginhandler}></Body>:<Login isLoggedin={loginhandler}></Login>
-      } */}
+
+      {/* <Body></Body>  */}
+
     </div>
+
   );
 }
-
 export default App;

@@ -1,74 +1,298 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
-    background-color: lightgrey;
-    font-weight: 600;
-    width: 100%;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5em;
+  align-items: center;
+  padding: 50px 100px 50px 100px;
+  background-color: #008ECC;
+}
+header h1{
+  color: ghostwhite;
+  font-size: 40px;
+  padding-top: 4px;
+}
+header ul{
+  display: flex;
+  gap: 9em;
+  list-style: none;
+  align-items: center;
+
+}
+.listlog a{
+  font-size: 21px;
+  position: relative;
+}
+header a{
+  text-decoration: none;
+  color: ghostwhite;
+  flex-wrap: wrap;
+
+}
+a input{
+  width: 300px;
+}
+ header li{
+  padding-top: 20px;
+  align-items: center;
+  font-size: larger;
+}
+
+.deals{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding:  50px 150px 0 150px;
+  gap: 5em;
+  text-align:  center;
+  align-items: center;
+} 
+.smartphone{
+  padding-top: 20px;
+}
+.fashion{
+  padding-top: 20px;
+}
+.cookies{
+  padding-top: 20px;
+
+}
+.audio{
+  padding-top: 20px;
+
+}
+.carticon{
+  margin-top: 2px;
+}
+.loginsignup{
+  margin-top: 2px;
+}
+
+
+
+.cartspan{
+  font-size: large;
+}
+.carticon a:hover{
+  color: green;
+} 
+
+.todaydeal {
+  text-align: center;
+  padding-top: 20px;
+}
+.deals img:hover{
+  transform: scale(1.1);
+}
+.smartphonemap{
+  display: flex;
+  justify-content: space-between;
+  margin:  50px 200px 0 150px;
+  gap: 5em;
+  text-align: center;
+  line-height: 2em;
+  flex-wrap: wrap;
+
+}
+.offerhandle{
+  padding-bottom: 20px;
+
+}
+.offerhandle button{
+  border-radius: 20px;
+
 }
 button{
-    color: purple;
-    font-weight: 600;
-    padding: 7px;
-    background-color: lightseagreen;
-    border-radius: 10px;
+  padding: 5px;
+  border: solid 2px;
+  background-color: #008ECC;
 }
 button:hover{
-    color: orange;
+  color: lawngreen;
+}
+.phonehead{
+  text-align: center;
+  padding-top: 50px;
+  margin: auto;
+}
+.buyhandle button{
+  border-radius: 20px;
+
+}
+.loginsignup a:hover{
+  color: green;
 }
 
-.footer{
-    display: flex;
-    justify-content: space-between;
-    color: purple;
-    font-size: larger;
+h1 a:hover{
+  color: green;
 }
-.footer h3{
-    position: relative;
-   left: 100px;
-   top: 50px;
+.menfashion{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5em;
+  padding:  50px 200px 0 200px ;
 }
-.footer h4{
-    position: relative;
-   right: 100px;
-   top: 50px;
-   font-size: larger;
+.cookiesmap{
+  display: flex;
+  justify-content: space-between;
+  gap: 5em;
+  flex-wrap: wrap;
+  padding: 50px 200px 0 200px;
 }
+.audiomap{
+  display: flex;
+  justify-content: space-between;
+  gap: 5em;
+  flex-wrap: wrap;
+  padding: 50px 200px 0 200px;
 
-.footer h3:hover{
-    color: orange;
 }
-.footer h4:hover{
-    color: orange;
+.cook h3{
+  text-align: center;
+  padding-top: 50px;
 }
+.fash h3{
+  text-align: center;
+  padding-top: 50px;
+}
+.gear h3{
+  text-align: center;
+  padding-top: 50px;
+}
+.fashioncenter,h3,span {
+text-align: center;
+line-height: 2em;
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+}
+.cooktop,h3,span{
+  text-align: center;
+line-height: 2em;
+}
+.geartop,h3,span{
+  text-align: center;
+  line-height: 2em;
+}
+.buyfash{
+  padding-top: 20px;
+}
+.buyfash  button{
+  border-radius: 20px;
+}
+.offerhand{
+  padding-top: 20px;
+}
+.offerhand button{
+  border-radius: 20px;
+}
+.handlecook button{
+  border-radius: 20px;
+}
+.handlecook{
+  padding-top: 20px;
+}
+.cookbuy{
+  padding-top: 20px;
+}
+.cookbuy button{
+  border-radius: 20px;
+
+}
+.audioffer button{
+  border-radius: 20px;
+
+}
+.audioffer{
+  padding-top: 20px;
+}
+.offeraudio button{
+  border-radius: 20px;
+}
+.offeraudio{
+  padding-top: 20px;
+
+}
+.textdes,h3,span{
+  text-align: center;
+}
+.imagedes {
+  text-align: center;
 }
 .descripe{
-    padding:  0 0 0 100px;
-    gap: 2em;
-    align-items: center;
-    padding-top: 50px;
-    
+  padding-top: 50px;
+  line-height: 2em;
+  padding-bottom: 20px;
 }
-.textdes{
-    width: 500px;
-    height: 36vh;
-    margin: auto;
-    border: solid 3px green;
-    padding: 0 0 0 15px;
-    line-height: 5em;
-    text-align: center;
-    color: blueviolet;
-    
+.formlog{
+  padding: 25px 0 25px 0 ;
+  text-align: center;
 }
-.imagedes{
-    width: 500px;
-    margin: auto;
-    border: solid 3px green;
-    height: 37vh;
-    
+.logsig{
+  padding-top: 20px;
 }
+
+.loginbtn input{
+ padding: 3px;
+ color: whitesmoke;
+ background-color: #008ECC;
+ 
+}
+.formgap input{
+  margin-bottom: 25px;
+  width: 300px;
+}
+@media screen and ((min-width: 400px) and (max-width:500px)){
+  body{
+    border: solid 2px green;
+   
+  }
+
+  }

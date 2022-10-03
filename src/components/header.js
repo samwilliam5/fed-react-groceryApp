@@ -1,24 +1,54 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {FaCartPlus} from 'react-icons/fa'
 import {MdSupervisorAccount} from 'react-icons/md'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+import AddContext from './Usecontext/Usecontext';
+import { selectUser } from '../Feauters/Userslice';
 
 
 const Header = () => {
+
+  const user = useSelector(selectUser);
+
+  const cartLength=useContext(AddContext).cart;
+  const addcart=useNavigate()
+
+
+  const carthandle=(e)=>{
+    e.preventDefault()
+    if(user == null){
+      alert("please login")
+    }else{
+      addcart("/cart")
+    }
+    
+}
+const handlelog=(e)=>{
+  e.preventDefault()
+  addcart("/loginsignin")
+}
+const handlehome=(e)=>{
+  e.preventDefault()
+  addcart("/home")
+}
   return (
     <header>
         <div>
-      <h1><a href='/home'>ShopMarT</a></h1>
+      <h1 onClick={handlehome}><a href="/home">ShopMarT</a></h1>
       </div>
-      <div>
+      <div className='list1'>
         <ul>
             <li><a href="#search"><input type="text" placeholder='Search essentials,groceries and more...' /></a></li>
             <div className='loginsignup'>
-            <li className='listlog'><a href='/loginsignin' ><MdSupervisorAccount size={40}></MdSupervisorAccount>LogIn/SingnUp</a></li>
+            <li className='listlog' onClick={handlelog}><a href='/loginsignin' ><MdSupervisorAccount size={40}></MdSupervisorAccount> Sign in / Sign up </a></li>
             </div>
             <div className='carticon'>
-            <li className='listcart'><a href="/cart" >
+            <li className='listcart'><a href='/cart'>
               {/* <span className='cartspan'>&#128722;</span> */}
-              <span className='cartspan'><FaCartPlus size={40} ></FaCartPlus></span>
+              <span className='cartspan'><FaCartPlus size={40} onClick={carthandle}></FaCartPlus>
+              <span>{cartLength.length}</span>
+              </span>
               </a></li>
             </div>
         </ul>

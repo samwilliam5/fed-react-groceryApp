@@ -1,7 +1,11 @@
-import React, { useEffect,useState } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
+import AddContext from '../Usecontext/Usecontext';
+
 const Descriptionfashion = () => {
+  const cart=useContext(AddContext);
     const params=useParams()
+
     const[foodstate,foodsetter]=useState([])
 
     useEffect(()=>{
@@ -17,6 +21,10 @@ return false
             foodsetter(food)
         })
     },[])
+    const carthandle=()=>{
+      cart.addCart(foodstate)
+      console.log(foodstate);
+          }
 
   return (
     <div>
@@ -26,9 +34,12 @@ return false
         </div>
  <div className='textdes'>
 <h3>{foodstate.name}</h3>
-<span>{foodstate.price}</span>
+<span>M.R.P: ₹{foodstate.price}</span>
 <div>
-<button>Add To Cart</button>
+<div>
+     <span> {foodstate.offer} {'%'}  OFF</span>
+     </div>
+<button onClick={carthandle}>Add To Cart</button>
 </div>
     </div>     
     </div>

@@ -10,7 +10,7 @@ const Audiolist = ({audio}) => {
       </div>
       <div className='audiomap'>
       {audio.map((audios)=>{
-       return <Audio key={audios.id} id={audios.id} image={audios.image} name={audios.name} price={audios.price} offer={audios.price}></Audio>
+       return <Audio key={audios.id} id={audios.id} image={audios.image} name={audios.name} price={audios.price} offer={audios.offer}></Audio>
       })}
       </div>
     </div>

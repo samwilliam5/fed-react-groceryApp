@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Cookie = ({name,price,offer,id,image}) => {
     const [cookiestate,cookiesetter]=useState(price)
-    const handleoffer=()=>{
-    const newoffer=cookiestate-(offer/100)*cookiestate
-    cookiesetter(newoffer)
-}
+//     const handleoffer=()=>{
+//     const newoffer=cookiestate-(offer/100)*cookiestate
+//     cookiesetter(newoffer)
+// }
 const nav=useNavigate()
 function desc(params) {
     nav('/descook/'+id)
@@ -19,13 +19,13 @@ function desc(params) {
       <div className='cooktop'>
         <img src={image} alt="This is cokkie image"  width={250} height={300} onClick={desc}/>
         <h3>{name}</h3>
-        <span>M.R.P: ₹{cookiestate}</span>
+        <span>M.R.P: ₹{price}</span>
         <div>
-        <span>{offer}</span>
+        <span>{offer} {'%'}  OFF</span>
         </div>
-        <div className='handlecook'>
+        {/* <div className='handlecook'>
 <button onClick={handleoffer}>Apply offer</button>
-        </div>
+        </div> */}
         <div className='cookbuy'>
 <button>Click To Buy</button>
         </div>

@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import AddContext from '../Usecontext/Usecontext';
+
 
 
 const Descriptionheadset = () => {
+  const cart=useContext(AddContext);
+
       const param=useParams()
       const[headsetstate,headsetsetter]=useState([])
       useEffect(()=>{
@@ -16,6 +20,10 @@ return false
 headsetsetter(food)
         })
     },[])
+    const carthandle=()=>{
+      cart.addCart(headsetstate)
+      console.log(headsetstate);
+          }
   return (
     <div>
     <div className='descripe'>
@@ -24,9 +32,12 @@ headsetsetter(food)
   </div>
 <div className='textdes'>
 <h3>{headsetstate.name}</h3>
-<span>{headsetstate.price}</span>
+<span>M.R.P: ₹{headsetstate.price}</span>
 <div>
-<button>Add To Cart</button>
+<div>
+     <span> {headsetstate.offer} {'%'}  OFF</span>
+     </div>
+<button onClick={carthandle}>Add To Cart</button>
 </div>
 </div>     
 </div>

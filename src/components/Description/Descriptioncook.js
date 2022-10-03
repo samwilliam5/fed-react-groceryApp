@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import AddContext from '../Usecontext/Usecontext';
+
 
 
 const Descriptioncook = () => {
+  const cart=useContext(AddContext);
     const params=useParams()
     const[cookstate,cooksetter]=useState([])
     useEffect(()=>{
@@ -18,6 +21,10 @@ const Descriptioncook = () => {
 cooksetter(food)
         })
     },[])
+    const carthandle=()=>{
+      cart.addCart(cookstate)
+      console.log(cookstate);
+          }
   return (
     <div>
     <div className='descripe'>
@@ -26,9 +33,12 @@ cooksetter(food)
   </div>
 <div className='textdes'>
 <h3>{cookstate.name}</h3>
-<span>{cookstate.price}</span>
+<span>M.R.P: ₹{cookstate.price}</span>
 <div>
-<button>Add To Cart</button>
+<div>
+     <span> {cookstate.offer} {'%'}  OFF</span>
+     </div>
+<button onClick={carthandle}>Add To Cart</button>
 </div>
 </div>     
 </div>

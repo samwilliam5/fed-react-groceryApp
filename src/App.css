@@ -49,10 +49,9 @@ body{
 header{
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 5em;
   align-items: center;
-  padding: 50px 100px 50px 100px;
+  padding: 50px;
   background-color: #008ECC;
 }
 header h1{
@@ -78,7 +77,8 @@ header a{
 
 }
 a input{
-  width: 300px;
+  width: 400px;
+  padding: 5px;
 }
  header li{
   padding-top: 20px;
@@ -290,9 +290,30 @@ line-height: 2em;
   width: 300px;
 }
 @media screen and ((min-width: 400px) and (max-width:500px)){
-  body{
+  header{
     border: solid 2px green;
    
   }
-
+li{
+display: block;
+}
   }
+.dealscolor{
+background-color: whitesmoke;  
+}
+.cartitem{
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ align-items: center;
+ text-align: center;
+ padding-left: 200px;
+ padding-right: 200px;
+ padding-top: 50px;
+ gap: 5em;
+ line-height: 3em;
+}
+.carthead h1{
+  text-align: center;
+
+}

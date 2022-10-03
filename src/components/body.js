@@ -5,7 +5,7 @@ const Body = () => {
     const[itemsState,itemSetter]=useState([])
 
     useEffect(()=>{
-        const intervalId=setInterval((response)=>{
+        const intervalId=setInterval(()=>{
 fetch(`https://633038def5fda801f8dcdddc.mockapi.io/smartphone`)
 .then((response)=>{
     if (response.ok) {
@@ -17,7 +17,7 @@ fetch(`https://633038def5fda801f8dcdddc.mockapi.io/smartphone`)
         itemSetter(response)
     }
 })
-        },10)
+        },1000)
         return()=>{
             clearInterval(intervalId)
         }

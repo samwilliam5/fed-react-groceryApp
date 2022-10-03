@@ -1,15 +1,13 @@
-import React, { useContext } from 'react'
-import { useEffect,useState } from 'react';
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import AddContext from '../Usecontext/Usecontext';
-
-const Description = () => {
-  const cart=useContext(AddContext);
+const Descriptiondeals = () => {
+    const cart=useContext(AddContext);
     const params=useParams();
     const[currentfood,foodsetter]=useState([]);
 
     useEffect(()=>{
-        fetch(`https://633038def5fda801f8dcdddc.mockapi.io/smartphone/`+params.id)
+        fetch(`https://63146fb1fc9dc45cb4ed743a.mockapi.io/api/topdeal/`+params.id)
         .then((response)=>{
   if(response.ok){
     // console.log(response.status);
@@ -27,7 +25,7 @@ console.log(currentfood);
     }
   return (
     <div>
-          <div className='descripe'>
+       <div className='descripe'>
         <div className='imagedes'>
 <img src={currentfood.image}  width={300} height={300} alt="" />
         </div>
@@ -46,4 +44,4 @@ console.log(currentfood);
   )
 }
 
-export default Description
+export default Descriptiondeals
